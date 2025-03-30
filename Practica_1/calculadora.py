@@ -30,7 +30,9 @@ class Calculadora:
 
     def mostrar_operacion(self):
         return f"{self.operacion}: {self.a} y {self.b} = {self.resultado}"
+    
+print("*-*-*-*CALCULADORA 1*-*-*-*")
 
 c = Calculadora(5, 15)
 
-print(c.suma(), "|", c.resta(), "|", c.multiplicacion(), "|", c.division())
+print("\n", c.suma(), "\n", c.resta(), "\n", c.multiplicacion(), "\n", c.division())
