@@ -1,38 +1,30 @@
-class Calculadora:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
+class calculadora:
+    def __init__(self):
         self.resultado = 0
         self.operacion = ""
 
-    def suma(self):
-        self.operacion = "Suma"
-        self.resultado = self.a + self.b
-        return self.mostrar_operacion()
-    
-    def resta(self):
-        self.operacion = "Resta"
-        self.resultado = self.a - self.b
-        return self.mostrar_operacion()
+    def suma(self,a,b):
+        self.operacion ="Suma"
+        self.resultado= a+ b
+        return self.mostrar_operacion(a, b)
 
-    def multiplicacion(self):
-        self.operacion = "Multiplicación"
-        self.resultado = self.a * self.b
-        return self.mostrar_operacion()
+    def resta(self ,a,b):
+        self.operacion ="Resta"
+        self.resultado = a - b
+        return self.mostrar_operacion(a, b)
 
-    def division(self):
-        if self.b != 0:
-            self.operacion = "División"
-            self.resultado = self.a / self.b
-        else:
-            return "Error: División por cero"
-        return self.mostrar_operacion()
+    def _multiplicacion(self,a ,b):
+        return a * b
 
-    def mostrar_operacion(self):
-        return f"{self.operacion}: {self.a} y {self.b} = {self.resultado}"
-    
-print("*-*-*-*CALCULADORA 1*-*-*-*")
+    def multiplicacion(self ,a ,b):
+        self.operacion ="Multiplicacion"
+        self.resultado = self._multiplicacion(a, b)
+        return self.mostrar_operacion(a, b)
 
-c = Calculadora(5, 15)
+    def division(self ,a ,b):
+        self.operacion ="Dividion"
+        self.resultado = a / b
+        return self.mostrar_operacion(a,b)
 
-print("\n", c.suma(), "\n", c.resta(), "\n", c.multiplicacion(), "\n", c.division())
+    def mostrar_operacion(self ,a ,b):
+        return f"{self.operacion} {a} y {b} = {self.resultado}"
